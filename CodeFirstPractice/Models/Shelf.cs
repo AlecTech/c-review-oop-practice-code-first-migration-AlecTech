@@ -22,6 +22,7 @@ namespace CodeFirstPractice.Models
 
         [Required]
         [Column(TypeName = "varchar(50)")]
+        //[Column(CreateFormate = "varchar(50) COLLATE NOCASE")]
         public string Name { get; set; }
          
     }
