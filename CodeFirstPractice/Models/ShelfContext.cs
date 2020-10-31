@@ -26,6 +26,7 @@ namespace CodeFirstPractice.Models
             }
 
         }
+        //for dababase migration
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Shelf>(entity =>
@@ -35,6 +36,24 @@ namespace CodeFirstPractice.Models
                 .HasCharSet("utf8mb4")
                 .HasCollation("utf8mb4_general_ci");
 
+                entity.HasData
+                    (
+                    new Shelf() 
+                    {   ID = -1, 
+                        Name = "Item1" },
+                    new Shelf() 
+                    {   ID = -2, 
+                        Name = "Item2" },
+                    new Shelf() 
+                    {   ID = -3, 
+                        Name = "Item3" },
+                    new Shelf() 
+                    {   ID = -4, 
+                        Name = "Item4" },
+                    new Shelf() 
+                    {   ID = -5, 
+                        Name = "Item5" }
+                    );
             });
         
         }
